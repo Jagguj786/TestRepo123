@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CrossBrowser" >
+ 
+    <test name="ChromeTest">
+		<parameter name="browser" value="Chrome"></parameter>
+		<classes>
+			<class name="com.mystore.testcases.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="EdgeTest">
+		<parameter name="browser" value="Edge"></parameter>
+		<classes>
+			<class name="com.mystore.testcases.IndexPageTest" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->

@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="true" 
+    xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+    <!-- Define the console appender -->
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+        </layout>
+    </appender>
+
+    <!-- Define the file appender -->
+    <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+        <param name="File" value="Logs/log4j.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+        </layout>
+    </appender>
+
+    <!-- Set the root logger level to DEBUG and its only appender to consoleAppender -->
+    <root>
+        <priority value="DEBUG" />
+        <appender-ref ref="consoleAppender" />
+        <appender-ref ref="fileAppender" />
+    </root>
+
+</log4j:configuration>
